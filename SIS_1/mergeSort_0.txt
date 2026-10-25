@@ -1,4 +1,4 @@
-runs (ms): 0.1985, 0.1864, 0.1907 | median: 0.1907 | comparisons: 8754 | copies: 19952
+runs (ms): 0.1689, 0.1592, 0.1541 | median: 0.1592 | comparisons: 8754 | copies: 19952
 6637
 24727
 25014

@@ -97,6 +97,17 @@ int main()
 		<< setw(14) << "Radix (ms)" << setw(14) << "Inspections" << setw(12) << "Placements"
 		<< "\n";
 
+	// results.csv 
+	ofstream results("results.csv");
+	if (!results.is_open()) {
+		cerr << "Error: Could not open results.csv" << endl;
+		return 1;
+	}
+
+	results << "size,"
+		<< "merge_run1_ms,merge_run2_ms,merge_run3_ms,merge_median_ms,merge_comparisons,merge_copies,"
+		<< "radix_run1_ms,radix_run2_ms,radix_run3_ms,radix_median_ms,radix_digit_inspections,radix_placements\n";
+
 
 	// same dataset per input size;
 	for (int i = 0; i < 5; i++)
@@ -134,7 +145,14 @@ int main()
 			<< setw(14) << radixMs << setw(14) << digitInspections << setw(12) << elementsPlacements
 			<< "\n";
 
-	}
+		
+		results << numbers.size() << ","
+			<< mergeTimes[0] << "," << mergeTimes[1] << "," << mergeTimes[2] << ","
+			<< mergeMs << "," << comparisons << "," << elementCopies << ","
+			<< radixTimes[0] << "," << radixTimes[1] << "," << radixTimes[2] << ","
+			<< radixMs << "," << digitInspections << "," << elementsPlacements << "\n";
 
+	}
+	results.close();
 	return 0;
 }

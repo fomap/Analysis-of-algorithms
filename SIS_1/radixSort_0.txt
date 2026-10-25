@@ -1,4 +1,4 @@
-runs (ms): 0.1384, 0.1421, 0.144 | median: 0.1421 | digit inspections: 14000 | placements: 14000
+runs (ms): 0.0769, 0.079, 0.0768 | median: 0.0769 | digit inspections: 14000 | placements: 14000
 6637
 24727
 25014

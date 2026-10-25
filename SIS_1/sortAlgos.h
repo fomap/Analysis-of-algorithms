@@ -2,7 +2,7 @@
 #include <vector>
 
 // Merge sort
-extern long long comparisons; // key comparisons: Left[i] <= Right[i]
+extern long long comparisons; // key comparisons: Left[i] <= Right[j]
 extern long long elementCopies; // element writes into Left/Right + back into arr
 
 // Radix sort

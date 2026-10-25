@@ -1,4 +1,4 @@
-runs (ms): 1.3717, 1.3783, 1.3676 | median: 1.3717 | digit inspections: 140000 | placements: 140000
+runs (ms): 0.7719, 0.7682, 0.7564 | median: 0.7682 | digit inspections: 140000 | placements: 140000
 217
 518
 3872

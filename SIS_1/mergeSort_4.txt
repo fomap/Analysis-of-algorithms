@@ -1,4 +1,4 @@
-runs (ms): 23.9215, 23.7796, 23.6577 | median: 23.7796 | comparisons: 1536214 | copies: 3337856
+runs (ms): 20.6805, 20.7664, 20.7736 | median: 20.7664 | comparisons: 1536214 | copies: 3337856
 79
 86
 165
