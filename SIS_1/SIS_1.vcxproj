@@ -138,7 +138,7 @@
     <None Include="sorts.exe" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="data.txt" />
+    <Text Include="data_test.txt" />
     <Text Include="data_0.txt" />
     <Text Include="data_1.txt" />
     <Text Include="data_2.txt" />
@@ -146,13 +146,13 @@
     <Text Include="data_4.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="sortAlgos.h" />
+  </ItemGroup>
+  <ItemGroup>
     <Object Include="main.obj" />
     <Object Include="mergeSort.obj" />
     <Object Include="radixSort.obj" />
     <Object Include="randomGen.obj" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="sortAlgos.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
