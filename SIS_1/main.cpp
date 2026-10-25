@@ -32,16 +32,6 @@ void writeSortedFile(const string& filename, const vector<int>& sorted,
 	}
 }
 
-
-void print(vector<int>& arr)
-{
-	for (const auto& value : arr) {
-		cout << value << " ";
-	}
-
-	cout << endl;
-}
-
 double median(double a, double b, double c)
 {
 	if ((a <= b && b <= c) || (c <= b && b <= a)) return b;
