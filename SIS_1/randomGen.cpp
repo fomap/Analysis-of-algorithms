@@ -36,15 +36,6 @@ int main()
 		}
 	}
 
-
-
-	/*for (int i = 0; i < 1000; i++)
-	{
-		outputfile << dist(rng) << "\n";
-	}
-
-	outputfile.close();*/
-
 	cout << "data was written!!!" << endl;
 	return 0;
 
