@@ -21,5 +21,37 @@
     <ClCompile Include="radixSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="randomGen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="a.exe" />
+    <None Include="mergeSort.exe" />
+    <None Include="radixSort.exe" />
+    <None Include="randomGen.exe" />
+    <None Include="sorts.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt" />
+    <Text Include="data_0.txt" />
+    <Text Include="data_1.txt" />
+    <Text Include="data_2.txt" />
+    <Text Include="data_3.txt" />
+    <Text Include="data_4.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="main.obj" />
+    <Object Include="mergeSort.obj" />
+    <Object Include="radixSort.obj" />
+    <Object Include="randomGen.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sortAlgos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
