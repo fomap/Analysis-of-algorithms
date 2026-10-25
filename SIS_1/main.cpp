@@ -32,6 +32,8 @@ void writeSortedFile(const string& filename, const vector<int>& sorted,
 	}
 }
 
+
+//gets median of the 3 runs
 double median(double a, double b, double c)
 {
 	if ((a <= b && b <= c) || (c <= b && b <= a)) return b;
@@ -39,14 +41,20 @@ double median(double a, double b, double c)
 	return c;
 }
 
+
+//runs merge sort 3 times on the same input and returns median time. 
 double timerMergeSort(const vector<int>& numbers, double run[3], vector<int>& sorted)
 {
 	for (int attmpt = 0; attmpt < 3; attmpt++) {
+
+
+		//fresh unsorted copy every run
 		vector<int> arr = numbers;
 
 		comparisons = 0;
 		elementCopies = 0;
 
+		// starting the count only when sorting is performed. Reading file, copying elements and printing are not included
 		auto start = chrono::steady_clock::now();
 		mergeSort(arr, 0, (int)arr.size() - 1);
 		auto end = chrono::steady_clock::now();
@@ -57,15 +65,18 @@ double timerMergeSort(const vector<int>& numbers, double run[3], vector<int>& so
 	return median(run[0], run[1], run[2]);
 }
 
-
+//runs radix sort 3 times on the same input and returns median time
 double timerRadixSort(const vector<int>& numbers, double run[3], vector<int>& sorted)
 {
 	for (int attmpt = 0; attmpt < 3; attmpt++) {
+
+		//fresh unsorted copy every run
 		vector<int> arr = numbers;
 
 		digitInspections = 0;
 		elementsPlacements = 0;
 
+		// starting the count only when sorting is performed. Reading file, copying elements and printing are not included
 		auto start = chrono::steady_clock::now();
 		radixSort(arr, (int)arr.size());
 		auto end = chrono::steady_clock::now();
@@ -86,6 +97,8 @@ int main()
 		<< setw(14) << "Radix (ms)" << setw(14) << "Inspections" << setw(12) << "Placements"
 		<< "\n";
 
+
+	// same dataset per input size;
 	for (int i = 0; i < 5; i++)
 	{
 		string filename = "data_" + to_string(i) + ".txt";
@@ -96,6 +109,7 @@ int main()
 			return 1;
 		}
 
+		//read values from file and copy to vector
 		vector<int> numbers((istream_iterator<int>(file)), istream_iterator<int>());
 		file.close();
 	
@@ -103,14 +117,18 @@ int main()
 		double mergeTimes[3], radixTimes[3];
 		vector<int> mergeSorted, radixSorted;
 
+		//pass the same unordered data to sorting algorithms
 		double mergeMs = timerMergeSort(numbers, mergeTimes, mergeSorted);
 		double radixMs = timerRadixSort(numbers, radixTimes, radixSorted);
 
+
+		//has the counter the last run however they are the because same input produces the same counters
 		writeSortedFile("mergeSort_" + to_string(i) + ".txt", mergeSorted, mergeTimes, mergeMs,
 			"comparisons", comparisons, "copies", elementCopies);
 		writeSortedFile("radixSort_" + to_string(i) + ".txt", radixSorted, radixTimes, radixMs,
 			"digit inspections", digitInspections, "placements", elementsPlacements);
 
+		//displays the table per input size
 		cout << setw(10) << numbers.size()
 			<< setw(14) << mergeMs << setw(14) << comparisons << setw(12) << elementCopies
 			<< setw(14) << radixMs << setw(14) << digitInspections << setw(12) << elementsPlacements
@@ -118,4 +136,5 @@ int main()
 
 	}
 
+	return 0;
 }

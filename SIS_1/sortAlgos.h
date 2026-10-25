@@ -1,11 +1,13 @@
 #pragma once
 #include <vector>
 
-extern long long comparisons;
-extern long long elementCopies;
+// Merge sort
+extern long long comparisons; // key comparisons: Left[i] <= Right[i]
+extern long long elementCopies; // element writes into Left/Right + back into arr
 
-extern long long digitInspections;
-extern long long elementsPlacements;
+// Radix sort
+extern long long digitInspections; // digit extraction (value / exp) % 10
+extern long long elementsPlacements; // writes into outputArr + the copy back into arr
 
 void mergeSort(std::vector<int>& arr, int left, int right);
 void radixSort(std::vector<int>& arr, int n);

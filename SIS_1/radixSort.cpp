@@ -19,12 +19,12 @@ int getMax(vector<int>& arr, int n)
 	return max;
 }
 
-
+// count sort of arr by one decimal digit
 void countSort(vector<int>& arr, int n, int exp)
 {
 	vector<int> outputArr(n);
 
-	int i, count[10] = { 0 };
+	int i, count[10] = { 0 }; 
 
 	for (i = 0; i < n; i++)
 	{
@@ -58,12 +58,14 @@ void countSort(vector<int>& arr, int n, int exp)
 }
 
 
+//sorting of elements by ones digit, tens, hundreds etc. 
 void radixSort(vector<int>& arr, int n)
 {
-	if (arr.empty()) return;
+	if (arr.empty()) return; //handling of empty list
 
 	int max = getMax(arr, n);
 
+	//one counting sort pass per digit until exp is largen than the max value; 
 	for (int exp = 1; max / exp > 0; exp *= 10)
 	{
 		countSort(arr, n, exp);

@@ -6,10 +6,8 @@ using namespace std;
 
 int main()
 {
-	int recordNum = 5;
-
 	unsigned int seed = 67;
-	mt19937 rng(seed);
+	mt19937 rng(seed); 
 
 	int randSize[] = { 1000, 5000, 10000, 50000, 100000 };
 
