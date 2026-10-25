@@ -1,3 +1,4 @@
+#include "sortAlgos.h"
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -68,21 +69,22 @@ void mergeSort(vector<int>& arr, int left, int right)
 	merge(arr, left, mid, right);
 }
 
-int main()
-{
-	vector<int> arr = { 12, 34, 56, 778, 90, 1, 6, 7, 6, 7, 10, 22, 1000 };
-	int n = arr.size();
-
-	cout << "Given array is \n";
-	for (int i = 0; i < n; i++)
-		cout << arr[i] << " ";
-	cout << endl;
-
-	mergeSort(arr, 0, n - 1);;
-
-	for (int i = 0; i < n; i++)
-		cout << arr[i] << " ";
-	cout << endl;
-
-	return 0;
-}
+//int main()
+//{
+//	vector<int> arr = { };
+//	int n = arr.size();
+//
+//	cout << "Given array is \n";
+//	for (int i = 0; i < n; i++)
+//		cout << arr[i] << " ";
+//	cout << endl;
+//
+//	mergeSort(arr, 0, n - 1);;
+//
+//	cout << "Output array is \n";
+//	for (int i = 0; i < n; i++)
+//		cout << arr[i] << " ";
+//	cout << endl;
+//
+//	return 0;
+//}

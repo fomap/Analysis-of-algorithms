@@ -1,10 +1,11 @@
+#include "sortAlgos.h"
 #include <iostream>
 #include <vector>
 using namespace std;
 
 
 
-int getMax(int arr[], int n)
+int getMax(vector<int>& arr, int n)
 {
 	int max = arr[0];
 	for (int i = 1; i < n; i++)
@@ -18,7 +19,7 @@ int getMax(int arr[], int n)
 }
 
 
-void countSort(int arr[], int n, int exp)
+void countSort(vector<int>& arr, int n, int exp)
 {
 	vector<int> outputArr(n);
 
@@ -52,8 +53,10 @@ void countSort(int arr[], int n, int exp)
 }
 
 
-void radixSort(int arr[], int n)
+void radixSort(vector<int>& arr, int n)
 {
+	if (arr.empty()) return;
+
 	int max = getMax(arr, n);
 
 	for (int exp = 1; max / exp > 0; exp *= 10)
@@ -63,22 +66,24 @@ void radixSort(int arr[], int n)
 	
 }
 
-int main()
-{
-	int arr[] = { 12, 34, 56, 778, 90, 1, 6, 7, 6, 7, 10, 22, 1000 };
-	int n = sizeof(arr) / sizeof(arr[0]);
-
-	cout << "Given array is \n";
-	for (int i = 0; i < n; i++)
-		cout << arr[i] << " ";
-	cout << endl;
-
-	radixSort(arr, n);
-
-	for (int i = 0; i < n; i++)
-		cout << arr[i] << " ";
-	cout << endl;
-
-	return 0;
-
-}
+//int main()
+//{
+//	vector<int> arr = { };
+//	int n = arr.size();
+//
+//	cout << "Given array is \n";
+//	for (int i = 0; i < n; i++)
+//		cout << arr[i] << " ";
+//	cout << endl;
+//
+//	radixSort(arr, n);
+//
+//
+//	cout << "Output array is \n";
+//	for (int i = 0; i < n; i++)
+//		cout << arr[i] << " ";
+//	cout << endl;
+//
+//	return 0;
+//
+//}
