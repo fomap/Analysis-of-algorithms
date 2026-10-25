@@ -1,7 +1,9 @@
 #include "sortAlgos.h"
-#include <iostream>
 #include <vector>
 using namespace std;
+
+long long comparisons = 0;
+long long elementCopies = 0;
 
 void merge(vector<int>& arr, int left, int mid, int right)
 {
@@ -13,12 +15,14 @@ void merge(vector<int>& arr, int left, int mid, int right)
 	for (int i = 0; i < start1; i++)
 	{
 		Left[i] = arr[left + i];
+		elementCopies++;
 	}
 	
 	
 	for (int j = 0; j < start2; j++)
 	{
 		Right[j] = arr[mid + 1 + j];
+		elementCopies++;
 	}
 
 
@@ -27,14 +31,18 @@ void merge(vector<int>& arr, int left, int mid, int right)
 
 	while (i < start1 && j < start2)
 	{
+		comparisons++;
+
 		if(Left[i] <= Right[j])
 		{
 			arr[k] = Left[i];
+			elementCopies++;
 			i++;
 		}
 		else
 		{
 			arr[k] = Right[j];
+			elementCopies++;
 			j++;
 		}
 		k++;
@@ -43,6 +51,7 @@ void merge(vector<int>& arr, int left, int mid, int right)
 	while (i < start1)
 	{
 		arr[k] = Left[i];
+		elementCopies++;
 		i++;
 		k++;
 	}
@@ -50,6 +59,7 @@ void merge(vector<int>& arr, int left, int mid, int right)
 	while (j < start2)
 	{
 		arr[k] = Right[j];
+		elementCopies++;
 		j++;
 		k++;
 	}
@@ -69,22 +79,3 @@ void mergeSort(vector<int>& arr, int left, int right)
 	merge(arr, left, mid, right);
 }
 
-//int main()
-//{
-//	vector<int> arr = { };
-//	int n = arr.size();
-//
-//	cout << "Given array is \n";
-//	for (int i = 0; i < n; i++)
-//		cout << arr[i] << " ";
-//	cout << endl;
-//
-//	mergeSort(arr, 0, n - 1);;
-//
-//	cout << "Output array is \n";
-//	for (int i = 0; i < n; i++)
-//		cout << arr[i] << " ";
-//	cout << endl;
-//
-//	return 0;
-//}
